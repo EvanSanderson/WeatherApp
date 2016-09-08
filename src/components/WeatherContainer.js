@@ -9,23 +9,35 @@ constructor(){
     search: []
   }
 }
-setSearch = (search) => {
+setSearch = (state, city) => {
   this.setState({
-    search: search
+    state: state
   })
 }
-  render(){
-    WeatherModel.all(this.state.search).then((res)=> {
-      var temp = res.data.current_observation.temp_f
-      console.log(temp)
+getWeather = (state, city) => {
+  WeatherModel.all(state, city).then((res)=> {
+    var temp = res.data.current_observation.temp_f
+    var weather = res.data.current_observation.weather
+    var icon = res.data.current_observation.icon_url
+    this.setState({
+      temp: temp + "f",
+      weather: "The weather is " + weather,
+      icon: icon
     })
+    console.log(this.state.temp)
+  })
+}
+
+  render(){
     return (
       <div>
-      <h1> Weather App! </h1>
-      <p> {this.state.search} </p>
-      <p> {this.state.temp} </p>
+      <h1> Enter in a city and state below. </h1>
+      <img src={this.state.icon} />
+      <p> {this.state.weather} </p>
+      <p> {this.state.temp}</p>
       <WeatherSearch
-      setSearch = {this.setSearch} />
+      setSearch = {this.setSearch}
+      getWeather = {this.getWeather} />
       </div>
     )
   }

@@ -2,4 +2,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url("http://cdn.pcwallart.com/images/cold-wallpaper-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.WeatherContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.SearchForm {
+  padding: 10%;
 }

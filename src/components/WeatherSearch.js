@@ -12,6 +12,7 @@ class WeatherSearch extends Component {
 
   render() {
     return(
+      <div className= "SearchForm">
       <form onSubmit={(e)=>this.searchWeather(e)}>
         <input
         placeholder="Search for city"
@@ -23,6 +24,7 @@ class WeatherSearch extends Component {
           />
         <button type="submit">Search! </button>
       </form>
+      </div>
     )
   }
 }

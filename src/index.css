@@ -5,6 +5,7 @@ body {
   background: url("http://cdn.pcwallart.com/images/cold-wallpaper-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .WeatherContainer {
